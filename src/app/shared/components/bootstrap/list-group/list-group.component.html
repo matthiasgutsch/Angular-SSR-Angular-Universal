@@ -1,0 +1,5 @@
+<ul class="list-group">
+    <li *ngFor="let item of props.list" class="list-group-item" (click)="handleClick(item)">
+        {{ item[props.key] }}
+    </li>
+</ul>
