@@ -210,7 +210,9 @@ isLoggedIn() {
 ```
 
 
+
 ## How to reuse state?
+
 
 Since we got the data already on our server, we want to prevent our app from making not necessary API calls.
 

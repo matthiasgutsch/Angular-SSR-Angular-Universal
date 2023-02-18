@@ -8,12 +8,9 @@ import { IListGroup } from "./interface";
 })
 export class ListGroupComponent {
     @Input() props = {} as IListGroup;
-    @Output('handleClick') click = new EventEmitter();
+    @Output("handleClick") click = new EventEmitter();
 
-
-
-    public handleClick(current): void {
-        this.click.emit(current)
+    public getCurrent(item): void {
+        this.click.emit(item);
     }
-
 }

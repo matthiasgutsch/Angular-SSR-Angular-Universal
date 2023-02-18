@@ -22,7 +22,7 @@ export class IndexComponent implements OnInit {
         private router: Router
     ) {}
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         if (this.ts.hasKey(this.todosKey)) {
             this.todosProps.list = this.ts.get(this.todosKey, []);
             this.todosProps.key = "title";
