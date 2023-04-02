@@ -3,7 +3,7 @@
     "public": true,
     "name": "chartacoop",
     "rewrites": [
-      { "source": "/(.*)", "destination": "/api" }
+      { "source": "/(.*)", "destination": "/" }
     ],
     "functions": {
       "api/index.js": {
