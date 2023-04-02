@@ -1,3 +1,3 @@
-const server = require('../dist/server/main');
+const server = require('../dist/ssr/server/main');
 
 module.exports = server.app();
