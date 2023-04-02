@@ -14,7 +14,7 @@ import { TodosService } from "../todos.service";
 export class IndexComponent implements OnInit {
     public todosProps = {} as IListGroup;
     private todosKey = makeStateKey<ITodo[]>("todos");
-
+    public list: any;
     constructor(
         @Inject(PLATFORM_ID) private platformId: Object,
         private service: TodosService,
@@ -32,15 +32,10 @@ export class IndexComponent implements OnInit {
     }
 
     public getTodos(): void {
-        this.service.getAll().subscribe({
-            next: (response: ITodo[]) => {
-                if (isPlatformServer(this.platformId)) {
-                    this.ts.set<ITodo[]>(this.todosKey, response);
-                }
-                this.todosProps.list = response;
-                this.todosProps.key = "title";
-            },
-        });
+
+            this.service.getAll().subscribe((pData) => {
+              this.list = pData;
+            });
     }
 
     public handleClick(currentItem): void {

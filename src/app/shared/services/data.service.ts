@@ -11,4 +11,8 @@ export class DataService {
     public getAll() {
         return this.http.get(this.url);
     }
+
+    public get_id(id: string) {
+        return this.http.get(this.url + '/' + id);
+    }
 }

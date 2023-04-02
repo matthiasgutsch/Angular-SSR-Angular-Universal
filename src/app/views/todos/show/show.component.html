@@ -1,1 +1,16 @@
-<p>show works!</p>
+
+<div *ngIf="elements">
+<h1>{{elements.name}}</h1>
+
+<p>{{elements.address.street}} - {{elements.address.city}}</p>
+</div>
+
+
+<li
+*ngFor="let item of list"
+class="list-group-item"
+
+>
+
+<a [routerLink]="['/todos/',item.id]">{{item.name}}</a> 
+</li>
