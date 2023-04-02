@@ -1,11 +1,15 @@
 <div class="m-5">
     <h1 class="my-5">Todos</h1>
+    {{count}}
        <li
         *ngFor="let item of list"
         class="list-group-item"
         
     >
 
-   <a [routerLink]="['/todos/',item.id]">{{item.name}}</a> 
+   <a [routerLink]="['/todos/',item.startup_seo_url]">{{item.startup_name}}
+
+    <p>{{item.startup_headline}}</p>
+   </a> 
     </li>
 </div>

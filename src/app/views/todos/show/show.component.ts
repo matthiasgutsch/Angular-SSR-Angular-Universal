@@ -9,7 +9,7 @@ import { TodosService } from "../todos.service";
     templateUrl: "./show.component.html",
     styleUrls: ["./show.component.scss"],
 })
-export class ShowComponent implements OnInit {
+export class ShowComponent {
     element: any;
     slideshowList: any;
     elements:  any = [];
@@ -25,9 +25,7 @@ export class ShowComponent implements OnInit {
     private service: TodosService,
     private ts: TransferState,
     private router: Router
-    ) {}
-
-    ngOnInit(): void {
+    ) {
 
         this.route.paramMap.subscribe((params) => {
             const id = this.route.snapshot.paramMap.get("id");
@@ -41,17 +39,20 @@ export class ShowComponent implements OnInit {
     
           });
 
-        const { data } = history.state;
-        console.log(data);
-
-
     }
 
 
     public getTodos(): void {
 
-        this.service.getAll().subscribe((pData) => {
-          this.list = pData;
-        });
+        const paramsOther = {
+            page: '', 
+            size: 4, 
+            orderBy: 'random', 
+            orderByType: 'page_id'
+          };
+
+        this.service.get_all_startups(paramsOther).subscribe((pData) => {
+            this.list = pData;
+          });
 }
 }

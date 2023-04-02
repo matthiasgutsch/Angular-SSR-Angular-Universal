@@ -5,6 +5,6 @@ import { DataService } from "src/app/shared/services/data.service";
 @Injectable()
 export class TodosService extends DataService {
     constructor(httpClient: HttpClient) {
-        super("https://jsonplaceholder.typicode.com/users", httpClient);
+        super("https://api.startupinspire.com", httpClient);
     }
 }
