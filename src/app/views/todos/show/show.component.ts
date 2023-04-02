@@ -32,7 +32,7 @@ export class ShowComponent {
 
             this.service.get_id(id).subscribe((pData) => {
                 this.elements = pData;
-                this.title.setTitle(this.elements.name + ' | Inspiration gallery for startups');
+                this.title.setTitle(this.elements.startup_name + ' | Inspiration gallery for startups');
 
                 this.getTodos();
               });

@@ -1,9 +1,9 @@
 {
     "version": 2,
     "public": true,
-    "name": "chartacoop",
+    "name": "ssr",
     "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
+      { "source": "/(.*)", "destination": "/api" }
     ],
     "functions": {
       "api/index.js": {
