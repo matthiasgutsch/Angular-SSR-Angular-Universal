@@ -1,6 +1,6 @@
 import { Inject, Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from "@angular/common/http";
-import { map, Observable } from "rxjs";
+import { delay, map, Observable } from "rxjs";
 
 @Injectable({ providedIn: "root" })
 export class DataService {
@@ -102,8 +102,8 @@ export class DataService {
           "Authorization",
            this.authToken,
         );
-        return this.http.get(`${this.url}/startups/id_public/` + id, {headers:header}).pipe(
-        );
+        
+        return this.http.get(`${this.url}/startups/id_public/` + id, {headers:header}).pipe(delay(1000));
       }
 
 
@@ -128,6 +128,7 @@ export class DataService {
               const ts: any = res.body;
               return ts;
             }),
+            delay(1000)
           );
       }
 }
