@@ -7,7 +7,7 @@
     ],
     "functions": {
       "api/index.js": {
-        "includeFiles": "dist/browser/**"
+        "includeFiles": "dist/ssr/browser/**"
       }
     }
   }
